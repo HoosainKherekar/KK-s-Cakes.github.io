@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK's Cakes - Artisanal Bakery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="style.css"
+	<script src="script.js"></script>
+</head>
+<body>
+
+	<div class="intro-screen" id="intro-screen">
+		<div class="collage-background"></div>
+		
+		<div class="intro-content">
+			<img src="images/Logo.png" alt="KK's Cakes Logo" class="logo-small">
+			</div>
+		</div>
+	</div>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-bold text-rose-600 dancing-script" onclick="showPage('home')">
+                        <img src="images/Logo.png" alt="KK's Cakes Logo" style="width: 100px; height: auto;">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-rose-600 px-3 py-2" onclick="showPage('home')">Home</a>
+                    <a href="#menu" class="nav-link text-gray-700 hover:text-rose-600 px-3 py-2" onclick="showPage('menu')">Menu</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-rose-600 px-3 py-2" onclick="showPage('gallery')">Gallery</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-rose-600 px-3 py-2" onclick="showPage('about')">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-rose-600 px-3 py-2" onclick="showPage('contact')">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-rose-50" onclick="setActivePage('home')">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-rose-50" onclick="setActivePage('menu')">Menu</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-rose-50" onclick="setActivePage('gallery')">Gallery</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-rose-50" onclick="setActivePage('about')">About</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-rose-50" onclick="setActivePage('contact')">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active-page">
+        <!-- Hero Section -->
+        <section class="hero min-h-screen flex items-center justify-center text-center text-white">
+            <div class="px-4 max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Artisanal Cakes & Sweet Treats</h1>
+                <p class="text-xl md:text-2xl mb-8">Handcrafted with love using the finest ingredients</p>
+                <button class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300" onclick="showPage('menu')">
+                    View Our Menu
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-16 px-4 max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Signature Creations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="images/CustomCakes.jpg" alt="Custom Cakes" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Custom Cakes</h3>
+                        <p class="text-gray-600">Perfectly tailored cakes for every occasion, made just for you.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="images/GourmetCucpakes.jpg" alt="Cupcakes" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Gourmet Cupcakes</h3>
+                        <p class="text-gray-600">Delightful bite-sized treats with endless flavor combinations.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                    <img src="images/Specialities.webp" alt="Milk Tart" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Specialities</h3>
+                        <p class="text-gray-600">Our specialties are a showcase of creativity and flavor, expertly made to delight your senses. Treat yourself to something truly extraordinary!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Menu Page -->
+    <div id="menu" class="page">
+        <section class="py-12 px-4 max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-12">Our Menu</h1>
+            
+            <!-- Cakes -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 border-b-2 border-rose-200 pb-2">Cakes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3" alt="Chocolate Cake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Classic Chocolate</h3>
+                            <p class="text-gray-600 mb-4">Our rich chocolatey cake is a true chocolate lover's dream! Made with the finest cocoa and layered with a smooth, creamy frosting, each bite is a decadent experience. With a perfectly moist texture and a deep, satisfying chocolate flavor, it's the ultimate treat for any occasion. Whether you're celebrating or simply indulging, this cake is sure to delight every palate with its irresistible sweetness and luxurious richness.</p>
+                            <p class="text-rose-600 font-bold">From R600</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/RedVelvetCake.jpg" alt="Red Velvet" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Red Velvet</h3>
+                            <p class="text-gray-600 mb-4">Our Red Velvet Cake is a timeless classic that captivates both the eyes and the taste buds. With its soft, velvety crumb and a delicate touch of cocoa, this cake is balanced perfectly with a silky, tangy cream cheese frosting. The bold red hue and smooth texture create a visual and sensory delight, making it an ideal choice for any celebration. Light yet indulgent, its unique flavor is a beautiful harmony of sweetness and a hint of tang, offering an unforgettable, sophisticated treat in every bite.</p>
+                            <p class="text-rose-600 font-bold">From R600</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/VanillaCake.jpeg" alt="Vanilla Cake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Vanilla Cake</h3>
+                            <p class="text-gray-600 mb-4">Our Vanilla Cake is a light, airy masterpiece that celebrates the pure essence of vanilla. With each fluffy, moist layer, the delicate flavor of premium vanilla shines through, creating a truly refined experience. Paired with a smooth, velvety frosting, this cake is the perfect balance of simplicity and elegance. Whether you're enjoying it on its own or as the base for your favorite fillings, its timeless taste makes it a versatile and delicious treat for any occasion. Subtle yet unforgettable, it’s the essence of sweet perfection in every bite.</p>
+                            <p class="text-rose-600 font-bold">From R600</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/ChiffonCake.jpg" alt="Vanilla Cake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Chiffon Cake</h3>
+                            <p class="text-gray-600 mb-4">Our chiffon cakes are the epitome of elegance and indulgence. Baked to perfection, they boast a soft, airy texture that melts in your mouth with every bite. Light as a cloud and delicately sweet, these cakes are crafted from the finest ingredients, bringing you a sublime taste experience. Whether enjoyed plain or adorned with a luscious layer of frosting, our chiffon cakes are a treat that will leave you craving more!</p>
+                            <p class="text-rose-600 font-bold">From R350</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/BentoCake.webp" alt="Vanilla Cake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Bento Cake</h3>
+                            <p class="text-gray-600 mb-4">Our bento cakes are the perfect little indulgence—cute, compact, and absolutely delightful! These single-serving cakes are soft, moist, and beautifully decorated, making them a charming addition to any celebration or a sweet personal treat. Bursting with flavor and crafted with love, our bento cakes are as pleasing to the eye as they are to the taste buds. Treat yourself or someone special to a bite-sized moment of happiness!</p>
+                            <p class="text-rose-600 font-bold">From R300</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+			<script>
+				function openModal() {
+					document.getElementById('cake-modal').classList.remove('hidden');
+				}
+
+				function closeModal() {
+					document.getElementById('cake-modal').classList.add('hidden');
+				}
+			</script>
+            
+            <!-- Cupcakes -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 border-b-2 border-rose-200 pb-2">Cupcakes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/VanillaCupcake.jpg" alt="Vanilla Cupcake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Vanilla Dream</h3>
+                            <p class="text-gray-600 mb-4">Light, fluffy, and oh-so-dreamy! Our Vanilla Dream Cupcakes are a cloud of soft, moist vanilla sponge topped with a what your heart desires. One bite, and you’ll be floating on a vanilla-scented cloud of sweetness!</p>
+                            <p class="text-rose-600 font-bold">R9 each</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/ChocolateCupcakes.jpg" alt="Chocolate Cupcake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Double Chocolate</h3>
+                            <p class="text-gray-600 mb-4">Indulge in pure chocolatey happiness! Our Choco Bliss Cupcakes are rich, moist, and decadently delicious, crowned with a luscious swirl of creamy chocolate frosting. Each bite is a melt-in-your-mouth moment of cocoa heaven!</p>
+                            <p class="text-rose-600 font-bold">R10 each</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/RedVelvetCupcake.jpg" alt="Red Velvet Cupcake" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Red Velvet</h3>
+                            <p class="text-gray-600 mb-4">A luxurious treat that’s as bold as it is beautiful! Our Scarlet Velvet Cupcakes boast a velvety, tender crumb with a hint of cocoa, topped with a generous swirl of smooth, tangy cream cheese frosting. Indulge in a taste as captivating as its rich, red hue!</p>
+                            <p class="text-rose-600 font-bold">R15 each</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Milk Tart & Eclairs -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 border-b-2 border-rose-200 pb-2">Specialties</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/MilkTart.jpg" alt="Milk Tart" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Traditional Milk Tart</h3>
+                            <p class="text-gray-600 mb-4">A classic South African delight with a twist! Our Cinnamon Cream Milk Tart features a silky, custardy filling nestled in a buttery, flaky crust, topped with a dusting of fragrant cinnamon. One slice, and you'll be wrapped in a warm, comforting hug of creamy goodness!</p>
+                            <p class="text-rose-600 font-bold">Whole tart R180</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/Eclairs1.jpg" alt="Éclairs" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Éclairs</h3>
+                            <p class="text-gray-600 mb-4">Light, airy, and irresistibly indulgent! Our Chocolate Kiss Éclairs are filled with velvety vanilla custard or fresh whipped cream and coated with a smooth, glossy layer of rich chocolate ganache. Each bite is a sweet kiss of perfection!</p>
+                            <p class="text-rose-600 font-bold">R10 each</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md menu-item">
+                        <img src="images/Fancies.jpg" alt="Fancies" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Fancies</h3>
+                            <p class="text-gray-600 mb-4">Our fancies are the perfect fusion of sophistication and sweetness. These petite treats are carefully crafted with rich, flavorful ingredients, adorned with intricate designs, and finished with a touch of elegance. Soft, moist, and irresistibly charming, each fancy is a little bite of luxury that’s sure to impress. Perfect for high teas, celebrations, or a little indulgence just because!</p>
+                            <p class="text-rose-600 font-bold">R10 each</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300" onclick="showPage('contact')">
+                    Order Now
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="gallery" class="page">
+        <section class="py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold mb-4">Gallery</h1>
+                <div class="w-24 h-1 bg-rose-600 mx-auto"></div>
+            </div>
+
+            <!-- Gallery Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+                <!-- Cakes Section -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Cakes</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+                        <img src="images/cake1.jpg" alt="Cake 1" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake2.jpg" alt="Cake 2" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake3.jpg" alt="Cake 3" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake4.jpg" alt="Cake 1" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake5.jpg" alt="Cake 2" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake6.jpg" alt="Cake 3" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake7.jpg" alt="Cake 1" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake8.jpg" alt="Cake 2" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cake9.jpg" alt="Cake 3" class="expandable small-img rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <!-- Cupcakes Section -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Cupcakes</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+                        <img src="images/cupcake1.jpg" alt="Cupcake 1" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cupcake2.jpg" alt="Cupcake 2" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cupcake3.jpg" alt="Cupcake 3" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/cupcake4.jpg" alt="Cupcake 3" class="expandable small-img rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <!-- Sweet Treats Section -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-center">Specialities</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+                        <img src="images/eclairs.jpg" alt="Sweet Treat 1" class="expandable small-img rounded-lg shadow-lg">
+                        <img src="images/fancies1.jpg" alt="Sweet Treat 2" class="expandable small-img rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <div id="imageModal" class="modal hidden">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <img id="expandedImage" alt="Expanded View" class="modal-content">
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold mb-4">Our Story</h1>
+                <div class="w-24 h-1 bg-rose-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">From Humble Beginnings</h2>
+                    <p class="text-gray-700 mb-4">
+                        KK's Cakes began in 2010 as a small home bakery, with our founder Kashiefa baking cakes for friends and family. What started as a passion project quickly grew into a beloved local business as word spread about our delicious creations.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Every cake we make is crafted with the same love and attention to detail that Kashiefa put into those first cakes. We believe in using only the finest ingredients, sourced locally whenever possible.
+                    </p>
+                    <p class="text-gray-700">
+                        Today, we're proud to serve our community with a wide range of baked goods, from celebration cakes to everyday treats, all made with the same dedication to quality that started it all.
+                    </p>
+                </div>
+                <div class="order-2 md:order-1 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3" alt="Baking Process" class="w-full h-auto">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Philosophy</h2>
+                    <p class="text-gray-700 mb-4">
+                        At KK's Cakes, we believe that baking is an art form and a way to bring people together. Our mission is to create beautiful, delicious treats that make every occasion special.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        We never use artificial flavors or preservatives. Our recipes are a blend of traditional techniques and innovative flavors, always with a focus on quality and taste.
+                    </p>
+                    <p class="text-gray-700">
+                        Whether it's a wedding cake that will be the centerpiece of your big day or a simple cupcake to brighten someone's afternoon, we put our heart into everything we bake.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
+                <div class="w-24 h-1 bg-rose-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                    <p class="text-gray-700 mb-8">
+                        Have questions about our products or want to place an order? Reach out to us through any of these channels. We typically respond within 24 hours.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-rose-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-rose-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">KK's Cakes</h3>
+                                <p class="text-gray-700">4 Madison Lane, Lotus River, 7941</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-rose-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-rose-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Call Us</h3>
+                                <p class="text-gray-700">+27 81 833 7706</p>
+                                <p class="text-gray-500 text-sm">Open Everyday</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-rose-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-rose-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Email Us</h3>
+                                <p class="text-gray-700">k_kscakes@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-rose-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-whatsapp text-rose-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">WhatsApp Orders</h3>
+                                <p class="text-gray-700">+27 81 833 7706</p>
+                                <a href="https://wa.me/27818337706?text=Hello,%20I'd%20like%20to%20place%20an%20order%20for%20cakes." class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full mt-2 transition duration-300">
+                                    <i class="fab fa-whatsapp mr-2"></i> Message Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Order Information</h2>
+                    <div class="bg-rose-50 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl font-bold mb-4">How to Order</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                            <li>Browse our menu to select your items</li>
+                            <li>Contact us via WhatsApp with your order details</li>
+                            <li>We'll confirm availability and pricing</li>
+                            <li>Provide delivery/pickup details</li>
+                            <li>Make payment via EFT or Cash</li>
+                            <li>Enjoy your delicious KK's Cakes!</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="bg-rose-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">Business Hours</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex justify-between">
+                                <span>Monday - Sunday</span>
+                                <span>8:00 AM - 10:00 PM</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">
+                            <i class="fas fa-info-circle mr-2 text-rose-600"></i> Orders require 48 hours notice for standard items. Custom cakes require 1 week notice. A deposit and proof of payment is needed to start your order.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold mb-6 text-center">Find Us</h2>
+                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.105837431105!2d18.515081199999997!3d-34.041769699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc43fa72c4177f%3A0x68f97fe1fe52b1e3!2s4%20Madison%20Ln%2C%20Lotus%20River%2C%20Cape%20Town%2C%207805!5e1!3m2!1sen!2sza!4v1747056879869!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">KK's Cakes</h3>
+                    <p class="text-gray-400">
+                        Artisanal bakery specializing in custom cakes, pastries, and desserts made with love and the finest ingredients.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition" onclick="showPage('menu')">Menu</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-rose-400"></i>
+                            <span>4 Madison Lane, Lotus River, Cape Town, 7941</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-rose-400"></i>
+                            <span>+27 81 833 7706</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-rose-400"></i>
+                            <span>kherekarkashiefa@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="bg-gray-800 hover:bg-rose-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-rose-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-rose-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-bold mb-2">Newsletter</h4>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-700 text-white px-4 py-2 rounded-l focus:outline-none w-full">
+                        <button class="bg-rose-600 hover:bg-rose-700 px-4 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 KK's Cakes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+	<script src="script.js"></script>
+</body>
+</html>
